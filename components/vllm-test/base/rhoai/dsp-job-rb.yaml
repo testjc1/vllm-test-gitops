@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: vllm-test-dsp-job-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: vllm-test-dsp-job
+    namespace: rhtap-app
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: vllm-test-dsp-job-role
